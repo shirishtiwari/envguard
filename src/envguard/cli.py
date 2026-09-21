@@ -202,8 +202,18 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
+def _prepare_console():
+    """Unicode output (✓, ×) must not crash on Windows consoles using a legacy code page."""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(errors="replace")
+        except (AttributeError, ValueError):
+            pass
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
+    _prepare_console()
     if not argv or (argv[0].startswith("-") and argv[0] not in ("-h", "--help", "--version")):
         argv = ["check"] + argv
     args = build_parser().parse_args(argv)
