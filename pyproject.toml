@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "envguard"
+version = "0.1.0"
+description = "Validate .env files against .env.example, catch missing or malformed config, and stop secrets from being committed."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Shirish Tiwari" }]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["dotenv", "env", "config", "validation", "secrets", "cli", "ci"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Environment :: Console",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/shirishtiwari/envguard"
+Issues = "https://github.com/shirishtiwari/envguard/issues"
+
+[project.scripts]
+envguard = "envguard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

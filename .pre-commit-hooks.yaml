@@ -1,0 +1,14 @@
+- id: envguard-check
+  name: envguard check
+  description: Validate .env against .env.example
+  entry: envguard check
+  language: python
+  pass_filenames: false
+  files: ^\.env(\..*)?$
+
+- id: envguard-scan
+  name: envguard scan
+  description: Block committed .env files and hard-coded secrets
+  entry: envguard scan
+  language: python
+  pass_filenames: true
