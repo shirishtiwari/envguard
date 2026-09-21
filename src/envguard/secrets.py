@@ -127,9 +127,9 @@ def scan(root: Path, paths: Optional[Iterable[Path]] = None,
         if not p.is_file() or any(part in SKIP_DIRS for part in p.parts):
             continue
         try:
-            rel = str(p.resolve().relative_to(root))
+            rel = p.resolve().relative_to(root).as_posix()
         except ValueError:
-            rel = str(p)
+            rel = p.as_posix()
         if any(fnmatch.fnmatch(rel, pat) for pat in exclude):
             continue
 
