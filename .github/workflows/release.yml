@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/project/envguard-cli/
+      url: https://pypi.org/project/dotenv-sentinel/
     permissions:
       id-token: write
     steps:
@@ -58,4 +58,4 @@ jobs:
         run: >-
           gh release create "$GITHUB_REF_NAME" dist/*
           --title "envguard $GITHUB_REF_NAME"
-          --notes "See CHANGELOG.md for details. Install with pipx install envguard-cli"
+          --notes "See CHANGELOG.md for details. Install with pipx install dotenv-sentinel"

@@ -1,7 +1,7 @@
 # envguard
 
-[![PyPI](https://img.shields.io/pypi/v/envguard-cli)](https://pypi.org/project/envguard-cli/)
-[![Python](https://img.shields.io/pypi/pyversions/envguard-cli)](https://pypi.org/project/envguard-cli/)
+[![PyPI](https://img.shields.io/pypi/v/dotenv-sentinel)](https://pypi.org/project/dotenv-sentinel/)
+[![Python](https://img.shields.io/pypi/pyversions/dotenv-sentinel)](https://pypi.org/project/dotenv-sentinel/)
 [![CI](https://github.com/shirishtiwari/envguard/actions/workflows/ci.yml/badge.svg)](https://github.com/shirishtiwari/envguard/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -27,12 +27,12 @@ warning .env:7  LEGACY_FLAG is not declared in the example file
 ## Install
 
 ```bash
-pipx install envguard-cli    # recommended
+pipx install dotenv-sentinel    # recommended
 # or
-pip install envguard-cli
+pip install dotenv-sentinel
 ```
 
-The package is called `envguard-cli` on PyPI; the command it installs is `envguard`.
+The package is called `dotenv-sentinel` on PyPI; the command it installs is `envguard`.
 
 ## Quick start
 
@@ -127,7 +127,7 @@ Appends keys that exist in `.env.example` but not in your `.env`, using the exam
 **GitHub Actions**
 
 ```yaml
-- run: pipx install envguard-cli
+- run: pipx install dotenv-sentinel
 - run: envguard check -e .env.ci --strict
 - run: envguard scan
 ```

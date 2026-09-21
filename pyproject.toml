@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "envguard-cli"
+name = "dotenv-sentinel"
 version = "0.1.0"
 description = "Validate .env files against .env.example, catch missing or malformed config, and stop secrets from being committed."
 readme = "README.md"
