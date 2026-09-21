@@ -1,5 +1,10 @@
 # envguard
 
+[![PyPI](https://img.shields.io/pypi/v/envguard-cli)](https://pypi.org/project/envguard-cli/)
+[![Python](https://img.shields.io/pypi/pyversions/envguard-cli)](https://pypi.org/project/envguard-cli/)
+[![CI](https://github.com/shirishtiwari/envguard/actions/workflows/ci.yml/badge.svg)](https://github.com/shirishtiwari/envguard/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **Keep your `.env` files honest.** envguard checks your `.env` against `.env.example`, catches missing or malformed config before your app crashes at 2am, and stops secrets from sneaking into git.
 
 - Zero dependencies — pure Python 3.9+, installs in a second
@@ -22,12 +27,12 @@ warning .env:7  LEGACY_FLAG is not declared in the example file
 ## Install
 
 ```bash
-pipx install envguard        # recommended
+pipx install envguard-cli    # recommended
 # or
-pip install envguard
+pip install envguard-cli
 ```
 
-> Not on PyPI yet? Install from source: `pipx install git+https://github.com/shirishtiwari/envguard`
+The package is called `envguard-cli` on PyPI; the command it installs is `envguard`.
 
 ## Quick start
 
@@ -122,7 +127,7 @@ Appends keys that exist in `.env.example` but not in your `.env`, using the exam
 **GitHub Actions**
 
 ```yaml
-- run: pipx install envguard
+- run: pipx install envguard-cli
 - run: envguard check -e .env.ci --strict
 - run: envguard scan
 ```
@@ -140,7 +145,8 @@ repos:
 
 ## Roadmap
 
-- [ ] Publish to PyPI and Homebrew
+- [x] Publish to PyPI
+- [ ] Homebrew formula
 - [ ] `envguard diff .env.staging .env.production`
 - [ ] Config file support (`pyproject.toml` / `envguard.toml`)
 - [ ] More secret patterns (Azure, Twilio, SendGrid…)
